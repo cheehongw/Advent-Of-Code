@@ -19,6 +19,6 @@ def is_passport(passport):
         
     return res
 
-print(len(list(filter(is_passport, passports))))
-
+#print(len(list(filter(is_passport, passports))))
+print(passports)
 
