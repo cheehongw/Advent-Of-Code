@@ -22,5 +22,6 @@ public class Day6 {
         }
 
         System.out.println(LongStream.of(fishes).sum());
+        sc.close();
     }
 }
