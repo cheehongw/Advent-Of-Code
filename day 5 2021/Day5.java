@@ -25,8 +25,8 @@ class Day5 {
         int count = 0;
         Line line = new Line(x1y1, x2y2);
         if (line.isHorizontal()) {
-            int lower = x1y1.x < x2y2.x ? x1y1.x : x2y2.x;
-            int upper = x1y1.x > x2y2.x ? x1y1.x : x2y2.x;
+            int lower = Math.min(x1y1.x, x2y2.x);
+            int upper = Math.max(x1y1.x, x2y2.x);
             for (int i = lower ; i <= upper; i++) {
                 map[i][x1y1.y] +=1;
                 if (map[i][x1y1.y] == 2) {
@@ -34,8 +34,8 @@ class Day5 {
                 }
             }
         } else if (line.isVertical()) {
-            int lower = x1y1.y < x2y2.y ? x1y1.y : x2y2.y;
-            int upper = x1y1.y > x2y2.y ? x1y1.y : x2y2.y;
+            int lower = Math.min(x1y1.y,x2y2.y);
+            int upper = Math.max(x1y1.y,x2y2.y);
             for (int i = lower ; i <= upper; i++) {
                 map[x1y1.x][i] +=1;
                 if (map[x1y1.x][i] == 2) {
