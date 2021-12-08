@@ -32,28 +32,25 @@ public class Day8Part2 {
         Scanner sc = new Scanner(System.in);
         int sum = 0;
         for (int i = 0; i < 200; i++) {
-            String[] jumbledSegments = new String[10]; 
             HashMap<Character, Integer> segmentCount = new HashMap<>();
             String one = "";
             String four = "";
             
             for (int j = 0; j < 10; j++) {
-                jumbledSegments[j] = sc.next();
+                String unknown = sc.next();
                 //each time a character appears, we increment their count by 1
-                countChars(segmentCount, jumbledSegments[j]);
+                countChars(segmentCount, unknown);
 
-                switch(jumbledSegments[j].length()) {
+                switch(unknown.length()) {
                     case 2:
-                        one = jumbledSegments[j];
+                        one = unknown;
                         break;
                     case 4:
-                        four = jumbledSegments[j];
+                        four = unknown;
                         break;
                     default:
                 }
             }
-
-            segmentCount.forEach((k,v) -> System.out.printf("%s %s\n", k, v));
 
             //using the number of times a segment has appeared, we can deduce which letter 
             //corresponds to which segment
@@ -74,6 +71,8 @@ public class Day8Part2 {
         sc.close();      
     } 
 
+    
+
     public static void countChars(HashMap<Character, Integer> table, String str) {
         for (int i = 0; i < str.length(); i++) {
             Character character = str.charAt(i);
@@ -91,8 +90,8 @@ public class Day8Part2 {
      * Thankfully, we can disambiguate ZERO and TWO using the display for number 1 
      * (segment ZERO does not light up when 1 is flashed), and likewise using number 4 for segment THREE and SIX.
      * 
-     * Therefore, with the number of times a certain character lights up and with knowledge of what 
-     * character lights up when 1/4 is flashed, we can create a map from character to the corresponding segment number.
+     * Therefore, with the number of times a certain character lights up and with knowledge of what character 
+     * lights up when 1 and 4 is flashed, we can create a map from character to the corresponding segment number.
      * 
      *  _         8
      * |_|  <--> 678
@@ -132,8 +131,7 @@ public class Day8Part2 {
     }
 
     public static int decodeString(String s, HashMap<Character, Integer> map) {
-        System.out.println(s);
-        
+
         Set<Integer> num = s.chars()
             .mapToObj(chr -> (char) chr)
             .map(chr -> map.get(chr))
