@@ -46,7 +46,7 @@ class Day9Part2 {
         boolean[][] taken = new boolean[100][100];
         PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
         for (Pair minPoint : minimums) {
-            System.out.println(minPoint);
+            //System.out.println(minPoint);
             pq.add(BFS(taken, map, minPoint));
         }
 
@@ -84,18 +84,5 @@ class Day9Part2 {
                 }
             }
         }
-    }
-}
-
-class Pair {
-    int x, y;
-
-    Pair(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    public String toString() {
-        return String.format("%s, %s", x, y);
     }
 }
