@@ -44,9 +44,6 @@ public class Day15Part1 {
         }
 
         System.out.println(distanceEstimate[9999]);
-
-
-        
         sc.close();
     }
 }
@@ -70,8 +67,4 @@ class Pair implements Comparable<Pair>{
     public int compareTo(Pair other) {
         return this.d - other.d;
     }
-
-
-
 }
-

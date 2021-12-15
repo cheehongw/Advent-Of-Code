@@ -13,7 +13,7 @@ public class Day15Part2 {
                 int readIn = Integer.parseInt(sc.next());
                 for (int k = 0; k < 5; k++) {
                     for (int l = 0; l < 5; l++) {
-                        int newRisk = ((readIn + l + k -1) % 9) + 1;
+                        int newRisk = ((readIn + l + k - 1) % 9) + 1;
                         map[i + 100*k][j + 100*l] = newRisk;
                     }
                 }
@@ -50,9 +50,6 @@ public class Day15Part2 {
         }
 
         System.out.println(distanceEstimate[249999]);
-
-
-        
         sc.close();
     }
 }
@@ -76,7 +73,4 @@ class Pair implements Comparable<Pair>{
     public int compareTo(Pair other) {
         return this.d - other.d;
     }
-
-
-
 }
