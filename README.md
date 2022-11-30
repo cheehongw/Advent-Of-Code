@@ -9,6 +9,9 @@
 ---
 My attempts in Advent of Code since 2020.
 
+### 2022 Goals:
+- Learn and use C++ exclusively
+- Do better than last year (> 30 stars)
 
 ### Tech
 - Java
